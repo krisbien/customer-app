@@ -1,0 +1,45 @@
+<div>
+  <form [formGroup]="form" novalidate (ngSubmit)="onSave(form.value)">
+
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input id="name" formControlName='name' class="form-control" />
+      <div *ngIf="!form.controls['name'].valid && form.controls['name'].touched" class="alert">
+        This is required!
+      </div>
+    </div>
+
+    <div class="form-group">
+        <label for="surname">Surname:</label>
+        <input id="surname" formControlName='surname' class="form-control" />
+        <div *ngIf="!form.controls['surname'].valid && form.controls['surname'].touched" class="alert">
+          This is required!
+        </div>
+      </div>
+
+      <div class="form-group">
+          <label for="telephone">Telephone:</label>
+          <input id="telephone" formControlName='telephone' class="form-control" />
+          <div *ngIf="!form.controls['telephone'].valid && form.controls['telephone'].touched" class="alert">
+            This is required!
+          </div>
+        </div>
+
+        <div class="form-group">
+            <label for="address">Address:</label>
+            <textarea id="address" formControlName='address' class="form-control"></textarea>
+            <div *ngIf="!form.controls['address'].valid && form.controls['address'].touched" class="alert">
+              This is required!
+            </div>
+          </div>
+
+          <button [disabled]="!form.valid" class="btn btn-primary">Save</button>
+          <div class="status">{{status}}</div>
+  </form>
+  <hr/>
+  <div>
+    <button class="btn float-right" (click)="goBack()">Go Back</button>
+  </div>
+
+
+</div>
