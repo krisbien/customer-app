@@ -1,7 +1,7 @@
 # customer-app
 
 ### Prerequisites
-dotnet --version
+dotnet --version  
 2.1.4
 
 ### Clone or unpack zip
